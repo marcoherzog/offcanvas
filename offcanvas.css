@@ -1,0 +1,318 @@
+/*
+ * Style tweaks
+ * --------------------------------------------------
+ */
+html,
+body {
+overflow-x: hidden; /* Prevent scroll on narrow devices */
+}
+body {
+}
+footer {
+padding: 30px 0;
+}
+/* separate scroll fix */ 
+html, 
+body,
+body > .stage,
+body > .stage > .row-offcanvas {
+height: 100%;
+overflow: hidden;
+}
+
+body > .stage > .row-offcanvas > .offcanvas-content,
+body > .stage > .row-offcanvas > .offcanvas-sidebar {
+height: 100%;
+overflow: auto;
+-webkit-overflow-scrolling:touch;
+}
+
+
+/*
+ * Off Canvas START
+ * --------------------------------------------------
+ */
+@media screen and (max-width: 767px) {
+
+.row-offcanvas {
+  position: relative;
+  -webkit-transition: left .25s ease-in;
+     -moz-transition: left .25s ease-in;
+          transition: left .25s ease-in;
+}
+
+.offcanvas-sidebar {
+  position: absolute;
+  top: 0;
+  width: 80%; 
+}
+
+.row-offcanvas-left .offcanvas-sidebar {
+  left: 0; 
+}
+.row-offcanvas-right .offcanvas-sidebar {
+  right: 0; 
+}
+
+.row-offcanvas-left.active,
+.row-offcanvas-right.active {
+  left: 0; 
+}
+
+.row-offcanvas .offcanvas-content {
+  -webkit-transition: all .25s ease-in;
+     -moz-transition: all .25s ease-in;
+          transition: all .25s ease-in;
+  position: relative;
+  left: 0; 
+}
+.row-offcanvas-left.active .offcanvas-content {
+  left: 80%; 
+}
+.row-offcanvas-right.active .offcanvas-content {
+  left: -80%; 
+}
+.row-offcanvas.active .offcanvas-content .navbar-brand {
+display: none !important;
+}
+
+}
+@media screen and (min-width: 768px) {
+
+.navbar .offcanvas-sidebar {
+display: none;
+}
+
+}
+
+/*
+ * Styles offcanvas
+ * --------------------------------------------------
+ */
+@media all {
+
+.stage .offcanvas-sidebar,
+.stage .offcanvas-content {
+padding: 0;
+}
+.offcanvas-sidebar {
+height: 100%;
+}
+.offcanvas-content {
+z-index: 999;
+}
+.navbar {
+/*border: 0;*/
+}
+.navbar-default.navbar-shadow {
+-webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+-moz-box-shadow:    0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+box-shadow:         0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+}
+.navbar-inverse.navbar-shadow {
+-webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+-moz-box-shadow:    0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+box-shadow:         0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+}
+/* background option1 *//*
+.navbar-default .offcanvas-sidebar {
+background: #eee;
+}
+.navbar-default .offcanvas-content {
+background: #fff;
+}
+.navbar-inverse .offcanvas-sidebar {
+background: #1a1a1a;
+}
+.navbar-inverse .offcanvas-content {
+background: #222;
+}
+*//* end option 1 */
+
+/* background option2 */
+.navbar .offcanvas-sidebar .navbar-brand {
+display:none;
+}
+.navbar .active .offcanvas-sidebar .navbar-brand {
+display:block;
+}
+.navbar-default {
+background: -moz-linear-gradient(top,  rgba(238,238,238,0.98) 0%, rgba(238,238,238,0.98) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(238,238,238,0.98)), color-stop(100%,rgba(238,238,238,0.98))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(238,238,238,0.98) 0%,rgba(238,238,238,0.98) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(238,238,238,0.98) 0%,rgba(238,238,238,0.98) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(238,238,238,0.98) 0%,rgba(238,238,238,0.98) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(238,238,238,0.98) 0%,rgba(238,238,238,0.98) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#faeeeeee', endColorstr='#faeeeeee',GradientType=0 ); /* IE6-9 */
+}
+.navbar-default .active .offcanvas-sidebar {
+background: -moz-linear-gradient(top,  rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.02) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.02)), color-stop(100%,rgba(0,0,0,0.02))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(0,0,0,0.02) 0%,rgba(0,0,0,0.02) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(0,0,0,0.02) 0%,rgba(0,0,0,0.02) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(0,0,0,0.02) 0%,rgba(0,0,0,0.02) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(0,0,0,0.02) 0%,rgba(0,0,0,0.02) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#05000000', endColorstr='#05000000',GradientType=0 ); /* IE6-9 */
+}
+.navbar-inverse {
+background: -moz-linear-gradient(top,  rgba(34,34,34,0.96) 0%, rgba(34,34,34,0.96) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(34,34,34,0.96)), color-stop(100%,rgba(34,34,34,0.96))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(34,34,34,0.96) 0%,rgba(34,34,34,0.96) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(34,34,34,0.96) 0%,rgba(34,34,34,0.96) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(34,34,34,0.96) 0%,rgba(34,34,34,0.96) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(34,34,34,0.96) 0%,rgba(34,34,34,0.96) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5222222', endColorstr='#f5222222',GradientType=0 ); /* IE6-9 */
+}
+.navbar-inverse .active .offcanvas-sidebar {
+background: -moz-linear-gradient(top,  rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.02) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.02)), color-stop(100%,rgba(0,0,0,0.02))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(0,0,0,0.02) 0%,rgba(0,0,0,0.02) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(0,0,0,0.02) 0%,rgba(0,0,0,0.02) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(0,0,0,0.02) 0%,rgba(0,0,0,0.02) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(0,0,0,0.02) 0%,rgba(0,0,0,0.02) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#05000000', endColorstr='#05000000',GradientType=0 ); /* IE6-9 */
+}
+/* end option 2 */
+
+.stage .offcanvas-sidebar {
+background-color: #e9e9e9;
+border-right: 1px solid #e7e7e7;
+}
+.stage .offcanvas-sidebar-shadow {
+-webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+-moz-box-shadow:    inset 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+box-shadow:         inset 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+}
+.stage .offcanvas-sidebar.offcanvas-sidebar-inverse {
+background-color: #222;
+border-right: 1px solid #080808;
+}
+.stage .offcanvas-sidebar-shadow.offcanvas-sidebar-inverse {
+-webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+-moz-box-shadow:    inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+box-shadow:         inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+}
+.stage .offcanvas-content {
+background-color: #fff;
+}
+
+}
+
+/* navbar-toggle */
+@media all {
+
+.navbar-inverse .navbar-toggle {
+color: #fff;
+}
+.navbar-inverse .navbar-toggle .glyphicon {
+-webkit-transition: all 0.25s ease-out;
+-moz-transition: all 0.25s ease-out;
+transition: all 0.25s ease-out;
+}
+.navbar-inverse .navbar-toggle.collapsed .glyphicon {
+transform: rotate(180deg);
+-ms-transform: rotate(180deg); /* IE 9 */
+-webkit-transform: rotate(180deg); /* Safari and Chrome */
+}
+
+}
+
+/* list-group reset for .stage .offcanvas-sidebar */
+@media all {
+
+.stage .offcanvas-sidebar {
+padding-left: 0;
+padding-right: 0;
+}
+.stage .offcanvas-sidebar .list-group .list-group {
+margin-bottom: 0;
+}
+.stage .offcanvas-sidebar .list-group .list-group-item {
+background: transparent;
+border: none;
+border-bottom: 1px dotted #d3d3d3;
+color: #555;
+font-size: 1.1em;
+}
+.stage .offcanvas-sidebar.offcanvas-sidebar-inverse .list-group .list-group-item {
+border-bottom: 1px dotted #2f2f2f;
+color: #eee;
+}
+.stage .offcanvas-sidebar .list-group .list-group .list-group-item {
+font-size: 0.95em;
+font-weight: 300;
+padding-left: 30px;
+}
+.stage .offcanvas-sidebar .list-group .list-group-item * {
+vertical-align: middle;
+}
+.stage .offcanvas-sidebar .list-group .list-group-item .glyphicon {
+font-size: 1.4em;
+margin-right: 0.25em;
+}
+.stage .offcanvas-sidebar .list-group .list-group-item:first-child {
+border-radius: 0;
+}
+.stage .offcanvas-sidebar .list-group .list-group-item:last-child {
+border-radius: 0;
+}
+.stage .offcanvas-sidebar > .list-group > .list-group-item:last-child {
+border-bottom: none !important;
+}
+.stage .offcanvas-sidebar .list-group a:hover,
+.stage .offcanvas-sidebar .list-group a:focus,
+.stage .offcanvas-sidebar .list-group a:active {
+background: transparent;
+
+color: #222;
+}
+.stage .offcanvas-sidebar.offcanvas-sidebar-inverse .list-group a:hover,
+.stage .offcanvas-sidebar.offcanvas-sidebar-inverse .list-group a:focus,
+.stage .offcanvas-sidebar.offcanvas-sidebar-inverse .list-group a:active {
+color: #fff;
+}
+.stage .offcanvas-sidebar .list-group .list-group-item.active {
+background: #e3e3e3;
+color: #333;
+border-top: 1px solid #bbb;
+border-bottom: 1px solid #bbb;
+border-left: 5px solid #428bca;
+padding-left: 10px;
+}
+.stage .offcanvas-sidebar .list-group .list-group .list-group-item.active {
+padding-left: 25px;
+}
+.stage .offcanvas-sidebar.offcanvas-sidebar-inverse .list-group .list-group-item.active {
+background: #111;
+color: #fff;
+border-top: 1px solid #222;
+border-bottom: 1px solid #222;
+border-left: 5px solid #428bca;
+}
+.stage .offcanvas-sidebar .list-group a.active:hover,
+.stage .offcanvas-sidebar .list-group a.active:focus,
+.stage .offcanvas-sidebar .list-group a.active:active {
+}
+.stage .offcanvas-sidebar.offcanvas-sidebar-inverse .list-group a.active:hover,
+.stage .offcanvas-sidebar.offcanvas-sidebar-inverse .list-group a.active:focus,
+.stage .offcanvas-sidebar.offcanvas-sidebar-inverse .list-group a.active:active {
+}
+
+
+}
+
+/*
+ * Styles offcanvas END
+ * --------------------------------------------------
+ */
+
+/* fixed header css (ios7 class for 70px fixed header height - with status bar under ios7) */
+.stage .offcanvas-content,
+.stage .offcanvas-sidebar {
+padding-top: 50px;
+}
+body.ios7 .stage .offcanvas-content,
+body.ios7 .stage .offcanvas-sidebar { 
+padding-top: 70px; 
+}
+
